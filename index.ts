@@ -1,22 +1,6 @@
 import { fromEvent,interval,Observable } from 'rxjs'; 
 import { map,filter,flatMap,takeUntil } from 'rxjs/operators';
 
-
-function asteroids1() {
-    const ship = document.getElementById("ship")!;
-    const state = {
-        x:50,y:50,angle:0
-    }
-    document.onkeydown = e=>{
-        if(e.keyCode === 37) {
-            state.angle -= 3;
-        }
-        if(e.keyCode === 39) {
-            state.angle += 3;
-        }
-        ship.setAttribute('transform',`translate(${state.x},${state.y}) rotate(${state.angle})`)
-    }
-}
 function asteroids() {
     const ship = document.getElementById("ship")!;
     const state = {
@@ -40,9 +24,6 @@ function asteroids() {
         ship.setAttribute('transform',
           `translate(${state.x},${state.y}) rotate(${state.angle+=e.angle})`)
       }})
-  
-  
-
 }
 
 setTimeout(asteroids, 0)
